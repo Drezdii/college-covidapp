@@ -21,7 +21,17 @@ public class Contact {
     private Person person2;
 
     @Column(name = "dateContact")
-    private final LocalDate dateContact = LocalDate.now();
+    private LocalDate dateContact;
+
+    public Contact(Person person1, Person person2, LocalDate dateContact) {
+        this.person1 = person1;
+        this.person2 = person2;
+        this.dateContact = dateContact;
+    }
+
+    public Contact() {
+
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -39,6 +49,10 @@ public class Contact {
 
     public ContactCompositeID getId() {
         return id;
+    }
+
+    public void setId(ContactCompositeID id) {
+        this.id = id;
     }
 
     public Person getPerson1() {

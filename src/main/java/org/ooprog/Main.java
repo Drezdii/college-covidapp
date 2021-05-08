@@ -33,7 +33,7 @@ public class Main extends Application {
         //root.setStyle("-fx-background-color: #494d8d");
 
         var personController = new CreatePersonController(new CreatePersonView(), personRepo);
-        var contactsController = new AddCloseContactController(new AddCloseContactView());
+        var contactsController = new AddCloseContactController(new AddCloseContactView(), personRepo);
         var searchController = new SearchPersonController(new SearchPersonView(), personRepo);
 
         var personTab = new Tab("Create person");

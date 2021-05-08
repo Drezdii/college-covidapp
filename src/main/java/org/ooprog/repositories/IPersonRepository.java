@@ -1,5 +1,6 @@
 package org.ooprog.repositories;
 
+import javafx.collections.ObservableList;
 import org.ooprog.models.Contact;
 import org.ooprog.models.Person;
 
@@ -12,7 +13,9 @@ public interface IPersonRepository {
 
     List<Person> findPerson(String searchString);
 
-    List<Person> getAllPersons();
+    ObservableList<Person> getAllPersons();
 
     List<Contact> getCloseContacts(int id);
+
+    void addCloseContact(Contact contact);
 }

@@ -25,8 +25,7 @@ public class SearchPersonController {
         view.getSearchButton().setOnAction(e -> {
             var searchString = view.getSearchField().getText();
             if (!searchString.isBlank()) {
-                var result = repo.findPerson(searchString);
-                persons.setAll(result);
+                persons.setAll(repo.findPerson(searchString));
             }
         });
 
@@ -46,13 +45,12 @@ public class SearchPersonController {
             }
             // Clear the selection, this will cause unbindPersonProfile() to run
             view.getPersonList().getSelectionModel().clearSelection();
-            // Delete the person from the list
-            persons.remove(selectedItem);
+            // Refresh the list
+            persons.setAll(repo.getAllPersons());
         });
 
         view.getDisplayAllButton().setOnAction(e -> {
-            var result = repo.getAllPersons();
-            persons.setAll(result);
+            persons.setAll(repo.getAllPersons());
         });
     }
 
