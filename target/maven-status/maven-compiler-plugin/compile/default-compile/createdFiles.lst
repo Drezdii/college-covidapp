@@ -1,0 +1,16 @@
+org\ooprog\controllers\CreatePersonController.class
+org\ooprog\models\Contact.class
+org\ooprog\views\SearchPersonView.class
+org\ooprog\models\ContactCompositeID.class
+org\ooprog\repositories\IPersonRepository.class
+org\ooprog\models\Name.class
+org\ooprog\views\CreatePersonView.class
+org\ooprog\HibernateSessionFactory.class
+org\ooprog\controllers\SearchPersonController.class
+org\ooprog\controllers\AddCloseContactController.class
+org\ooprog\views\CustomListItem.class
+org\ooprog\views\PersonProfileView.class
+org\ooprog\models\Person.class
+org\ooprog\views\AddCloseContactView.class
+org\ooprog\Main.class
+org\ooprog\repositories\PersonRepository.class
