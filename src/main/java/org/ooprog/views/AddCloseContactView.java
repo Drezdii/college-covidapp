@@ -16,7 +16,7 @@ public class AddCloseContactView {
 
     private final ListView<Person> leftList = new ListView<>();
     private final ListView<Person> rightList = new ListView<>();
-    private final DatePicker datePicker = new DatePicker();
+    private final DatePicker datePicker = new DatePicker(LocalDate.now());
     private final Button saveButton = new Button("Save");
 
     public AddCloseContactView() {
@@ -31,8 +31,6 @@ public class AddCloseContactView {
         HBox.setHgrow(rightList, Priority.ALWAYS);
 
         listsContainer.getChildren().addAll(leftList, rightList);
-
-        var datePicker = new DatePicker(LocalDate.now());
         root.getChildren().addAll(listsContainer, datePicker, saveButton);
     }
 

@@ -1,6 +1,8 @@
 package org.ooprog.models;
 
 import org.hibernate.annotations.CollectionType;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.time.LocalDate;

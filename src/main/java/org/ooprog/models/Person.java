@@ -1,9 +1,7 @@
 package org.ooprog.models;
 
-import org.hibernate.annotations.CollectionType;
-
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -22,7 +20,7 @@ public class Person {
     private String email;
     private String phoneNumber;
     @OneToMany(mappedBy = "person1")
-    private Set<Contact> closeContacts;
+    private final Set<Contact> closeContacts = new HashSet<>();
 
     public Person(int ID, Name name, String email, String phoneNumber) {
         this.ID = ID;

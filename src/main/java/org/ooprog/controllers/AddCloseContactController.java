@@ -23,17 +23,28 @@ public class AddCloseContactController {
 
     private void setListeners() {
         view.getSaveButton().setOnAction(e -> {
-            // Add checks
             Person p1 = view.getLeftList().getSelectionModel().getSelectedItem();
             Person p2 = view.getRightList().getSelectionModel().getSelectedItem();
-
-            var closeContact = new Contact(p1, p2, LocalDate.now());
-            var id = new ContactCompositeID(p1.getID(), p2.getID());
-            closeContact.setId(id);
-
-            p1.getCloseContacts().add(closeContact);
-            repo.addCloseContact(closeContact);
+            LocalDate contactDate = view.getDatePicker().getValue();
+            addCloseContact(p1, p2, contactDate);
         });
+    }
+
+    public Contact addCloseContact(Person p1, Person p2, LocalDate date) {
+        if (p1 == null || p2 == null) {
+            return null;
+        }
+        if (p1.getID() == p2.getID()) {
+            return null;
+        }
+        System.out.println(date);
+        var closeContact = new Contact(p1, p2, date);
+        var id = new ContactCompositeID(p1.getID(), p2.getID());
+        closeContact.setId(id);
+
+        p1.getCloseContacts().add(closeContact);
+        repo.addCloseContact(closeContact);
+        return closeContact;
     }
 
     public Parent getView() {

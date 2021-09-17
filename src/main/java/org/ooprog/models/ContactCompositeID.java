@@ -1,10 +1,7 @@
 package org.ooprog.models;
 
-import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
 
